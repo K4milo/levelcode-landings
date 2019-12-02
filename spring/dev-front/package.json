@@ -1,0 +1,32 @@
+{
+  "name": "Default",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"....\" && exit 1"
+  },
+  "author": "MK",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.1.0",
+    "breakpoint-sass": "^2.6.1",
+    "css-mqpacker": "^4.0.0",
+    "csswring": "^4.0.0",
+    "font-awesome": "^4.4.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-util": "^3.0.7",
+    "node-sass": "^4.9.1",
+    "susy": "^2.2.6"
+  },
+  "dependencies": {
+    "gulp-sass": "^3.1.0",
+    "npm": "^5.5.1"
+  }
+}

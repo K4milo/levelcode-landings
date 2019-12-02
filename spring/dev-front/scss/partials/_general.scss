@@ -1,0 +1,15 @@
+body {
+	font-family: $md;
+	h1,h2,h3 {
+		font-family: $bk;
+	}
+	h4 {
+		color: $red;
+		font-family: $sil;
+	}
+	img {
+		display: inline-block;
+		max-width: 100%;
+		height: auto;
+	}
+}

@@ -1,0 +1,95 @@
+.modal {
+	@include coverAbsolute(100);
+	background-color: rgba($black,0.74);
+	position: fixed;
+
+	&--wrapper {
+		@include wrapper;
+	}
+
+	// Close button
+	&--close {
+		cursor: pointer;
+		position: absolute;
+		width: rem(40px);
+		height: rem(40px);
+		top: rem(20px);
+		right: rem(20px);
+		@include iconBG('../img/icon-close.png');
+		@include mq('md') {
+			width: rem(47px);
+			height: rem(47px);
+		}
+	}
+	
+	// Modal content
+	&--content {
+		width: 90%;
+		margin: rem(22px) auto;
+		@include mq('md') {
+			@include center('both');
+		}
+
+		&__header {
+			text-align: center;
+		}
+
+		&__body {
+			iframe {
+				display: block;
+				width: 100%;
+				max-width: rem(800px);
+				margin: 0 auto;
+				@include mq('md') {
+					min-height: rem(380px);
+				}
+			}
+			ul {
+				padding: rem(20px) 0;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center; 
+				max-width: rem(500px);
+				margin: 0 auto;
+				@include mq('md') {
+					padding: rem(15px) 0;
+				}
+				li {
+					display: block;
+					width: 100%;
+					@include mq('md') {
+						width: 40%;
+						margin: rem(16px) 0;
+						padding: 2% 4%;
+						text-align: center;
+					}
+					&:first-child {
+						border-bottom: rem(1px) solid $white;
+						@include mq('md') {
+							border-bottom: none;
+							border-right: rem(1px) solid $white;
+						}
+					}
+					figure,
+					span {
+						display: inline-block;
+						vertical-align: middle;
+						margin: 0 0;
+					}
+					span {
+						width: 65%;
+						color: $white;
+						text-align: left;
+					}
+					figure {
+						width: 30%;
+					}
+					a {
+						margin: rem(16px) 0;
+						@include button($background:$white, $color:$red, $size:rem(16px));
+					}
+				}
+			}
+		}
+	}
+}

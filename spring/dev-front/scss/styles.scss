@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+// Vendors
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+// Partials
+@import "partials/fonts";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/general";
+@import "partials/menu";
+@import "partials/footer";
+
+// Blocks
+@import "blocks/modal";
+@import "blocks/sliders";

@@ -1,0 +1,235 @@
+
+@mixin bdesktop {
+  @media (min-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+// MQS
+
+@mixin mq ($mquery) {
+  
+  $media-xxs:"(min-width : 320px)";
+  $media-xs: "(min-width : 480px)";
+  $media-sm: "(min-width: 768px)";
+  $media-mf: "(max-width: 768px)";
+  $media-md: "(min-width: 1025px)";
+  $media-lg: "(min-width: 1200px)";
+  
+  @if $mquery == xxs {
+    @media #{$media-xxs} { @content; }
+  }
+  @if $mquery == xs {
+    @media #{$media-xs} { @content; }
+  }
+  @else if $mquery == sm {
+    @media #{$media-sm} { @content; }
+  }
+  @else if $mquery == md {
+    @media #{$media-md}  { @content; }
+  }
+  @else if $mquery == mf {
+    @media #{$media-mf}  { @content; }
+  }
+  @else if $mquery == lg {
+    @media #{$media-lg}  { @content; }
+  }
+}
+
+@mixin bgcover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@mixin coverAbsolute ($z) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z;
+}
+
+@mixin bgparallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+
+@mixin iconBG($path, $size:100%){
+  background-image: url($path);
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-indent: -999999px;
+  overflow: hidden;
+}
+
+// Clearfix mixin
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin cont {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+// Define default font size
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
+
+// Gradients
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+    background: $start-color;
+
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+// Arrows
+@mixin arrow($direction, $color, $size){
+    display: block;
+    height: 0;
+    width: 0;
+    
+    @if $direction == 'top' {
+        border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+    } @else if $direction == 'right' {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+    } @else if $direction == 'bottom' {
+        border-top: $size solid $color;
+        border-right: $size solid transparent;
+        border-left: $size solid transparent;
+    } @else if $direction == 'left' {
+        border-top: $size solid transparent;
+      border-right: $size solid $color;
+      border-bottom: $size solid transparent;
+    } @else if $direction == 'top-left' {
+        border-top: $size solid $color; 
+        border-right: $size solid transparent;  
+    } @else if $direction == 'top-right' {
+        border-top: $size solid $color; 
+        border-left: $size solid transparent;
+    } @else if $direction == 'bottom-left' {
+        border-bottom: $size solid $color; 
+        border-right: $size solid transparent;  
+    } @else if $direction == 'bottom-right' {
+        border-bottom: $size solid $color; 
+        border-left: $size solid transparent;
+    }
+}
+
+// Pseudo
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+  
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+// Buttons
+@mixin defBtn($fontsize, $padding, $colortext, $bg, $hovercolor, $margin, $radius) {
+  display: inline-block;
+  border-radius: $radius!important;
+  border-color: $bg;
+  font-size: $fontsize!important;
+  padding: $padding!important;
+  text-align: center!important;
+  color: $colortext!important;
+  background-color: $bg!important;
+  transition: all 0.4s!important;
+  margin: $margin!important;
+  cursor: pointer;
+  &:hover {
+    background-color: $hovercolor!important;
+    color: $colortext!important;
+    cursor: pointer;
+  }
+}
+// Placeholders
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content}; 
+}
+
+
+// Layout wrapper
+@mixin wrapper {
+  max-width: 1142px;
+  margin: 0 auto;
+}
+
+// buttons
+@mixin button($background:$red, $color:$white, $size:rem(16px)) {
+  display: inline-block;
+  min-width: rem(100px);
+  padding: rem(10px) rem(20px);
+  border: rem(2px) solid $color;
+  color: $color;
+  font-size: $size;
+  background-color: $background;
+  border-radius: rem(30px);
+  text-align: center;
+  &:hover {
+    background-color: $color;
+    color: $background;
+  }
+}
+
