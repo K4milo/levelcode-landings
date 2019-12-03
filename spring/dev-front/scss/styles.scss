@@ -2,6 +2,7 @@
 
 // Vendors
 @import "../node_modules/font-awesome/scss/font-awesome";
+@import "vendors/glide";
 
 // Partials
 @import "partials/fonts";
@@ -9,8 +10,15 @@
 @import "partials/mixins";
 @import "partials/general";
 @import "partials/menu";
+@import "partials/header";
 @import "partials/footer";
 
 // Blocks
 @import "blocks/modal";
 @import "blocks/sliders";
+@import "blocks/video";
+@import "blocks/leads";
+@import "blocks/map";
+
+// Components
+@import "components/forms";

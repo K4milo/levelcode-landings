@@ -1,0 +1,30 @@
+.map {
+	&--wrapper {
+		@include wrapper;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&--info,
+	&--source {
+		width: 100%;
+		margin: rem(16px) auto;
+		@include mq('md') {
+			width: 50%;
+		}
+	}
+
+	&--source {
+		figure {
+			display: block;
+			min-height: rem(350px);
+		}
+	}
+	&--info {
+		a {
+			margin: rem(16px) 0;
+			@include button($red, $color:$white, $size:rem(16px));
+		}
+	}
+}

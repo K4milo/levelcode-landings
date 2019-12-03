@@ -1,0 +1,59 @@
+.header {
+	padding: rem(20px);
+	transition: all 0.32s;
+	@include mq('md') {
+		padding: 0 rem(20px);
+	}
+	&--wrapper {
+		@include wrapper;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&-brand {
+		width: 100%;
+		@include mq('md') {
+			width: rem(164px);
+		}
+	}
+	&-close {
+		display: block;
+		position: absolute;
+		width: rem(45px);
+		height: rem(45px);
+		@include mq('md') {
+			display: none;
+		}
+	}
+	&-menu {
+		width: 100%;
+		display: none;
+		@include mq('md') {
+			display: inherit;
+			width: 70%;
+		}
+		ul {
+			display: block;
+			padding: 0 0;
+			width: 100%;
+			@include mq('md') {
+				display: flex;
+			}
+			li {
+				display: block;
+				width: 100%;
+				text-align: center;
+				@include mq('md') {
+					flex: 1 1 rem(0px);
+				}
+				a {
+					color: $gray-txt;
+					&:hover {
+						color: $red;
+					}
+				}
+			}
+		}
+	}
+}

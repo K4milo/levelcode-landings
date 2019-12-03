@@ -1,5 +1,7 @@
 body {
 	font-family: $md;
+
+	// Font styles
 	h1,h2,h3 {
 		font-family: $bk;
 	}
@@ -11,5 +13,48 @@ body {
 		display: inline-block;
 		max-width: 100%;
 		height: auto;
+	}
+	
+	// button link behaviors
+	button,a{
+		transition: all 0.32s;
+	}
+
+	a {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	// header structure
+	header {
+		h3 {
+			text-transform: uppercase;
+			font-family: $md;
+			@include font(30px);
+			line-height: 1;
+			margin-bottom: 0;
+		}
+		h4 {
+			margin-top: rem(6px);
+			@include font(35px);
+		}
+	}
+	
+	// Handler displaying
+	.visible {
+		&-mobile {
+			display: block;
+			@include mq('sm') {
+				display: none;
+			}
+		}
+		&-desktop {
+			display: none;
+			@include mq('sm') {
+				display: block;
+			}
+		}
 	}
 }

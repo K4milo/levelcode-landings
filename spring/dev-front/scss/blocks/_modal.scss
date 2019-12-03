@@ -2,7 +2,10 @@
 	@include coverAbsolute(100);
 	background-color: rgba($black,0.74);
 	position: fixed;
-
+	display: none;
+	&.enable {
+		display: block;	
+	}
 	&--wrapper {
 		@include wrapper;
 	}
@@ -86,7 +89,7 @@
 					}
 					a {
 						margin: rem(16px) 0;
-						@include button($background:$white, $color:$red, $size:rem(16px));
+						@include button($white, $color:$red, $size:rem(16px));
 					}
 				}
 			}

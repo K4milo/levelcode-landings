@@ -1,0 +1,63 @@
+.video {
+	header {
+		text-align: center;
+	}
+	&--wrapper {
+		@include wrapper;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&--player,
+	&--content {
+		width: 100%;
+		margin: rem(16px) auto;
+	}
+
+	&--player {
+		@include mq('md') {
+			width: 65%;
+		}
+		iframe {
+			display: block;
+			min-height: rem(350px);
+		}
+	}
+	&--content {
+		@include mq('md') {
+			width: 35%;
+		}
+		ul {
+			padding: rem(20px) 0;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center; 
+			max-width: rem(500px);
+			margin: 0 auto;
+			@include mq('md') {
+				padding: rem(15px) 0;
+			}
+			li {
+				display: block;
+				width: 100%;
+				margin-bottom: rem(56px);
+				figure,
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					margin: 0 0;
+				}
+				span {
+					width: 75%;
+					color: $gray-txt;
+					text-align: left;
+					@include font(24px);
+				}
+				figure {
+					width: 20%;
+				}
+			}
+		}
+	}
+}

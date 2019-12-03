@@ -6,11 +6,10 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
   <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/leaflet.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -26,7 +25,7 @@
     <div class="modal--wrapper">
       <div class="modal--content">
         <div class="modal--content__header">
-          <img src="img/logo-white-big.png" alt="Spring Plaza"/>
+          <img src="img/white-logo.png" alt="Spring Plaza"/>
           <div class="modal--close">X</div>
         </div>
         <div class="modal--content__body">
@@ -58,53 +57,71 @@
   </section><!--EOF Modal window-->
 
   <header class="header">
-    <div class="header-brand">
-      <a href="#" class="header-brand__logo">Spring</a>
-      <button class="header-close">
-        <span class="header-close__1"></span>
-        <span class="header-close__2"></span>
-        <span class="header-close__3"></span>
-      </button>
+    <div class="header--wrapper">
+      <div class="header-brand">
+        <a href="#" class="header-brand__logo">
+          <img src="img/logo.png" alt="Spring">  
+        </a>
+        <button class="header-close">
+          <span class="header-close__1"></span>
+          <span class="header-close__2"></span>
+          <span class="header-close__3"></span>
+        </button>
+      </div>
+      <nav class="header-menu">
+         <ul>          
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Ubicación</a></li>
+            <li><a href="#">Proyecto</a></li>
+            <li><a href="#">Multimedia</a></li>
+            <li><a href="#">Contacto</a></li>
+         </ul> 
+      </nav><!--EOF Menu-->
     </div>
-    <nav class="header-menu">
-       <ul>          
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Ubicación</a></li>
-          <li><a href="#">Proyecto</a></li>
-          <li><a href="#">Multimedia</a></li>
-          <li><a href="#">Contacto</a></li>
-       </ul> 
-    </nav><!--EOF Menu-->
   </header>
 
   <section id="HeroBanner" class="hero slider">
-    <div class="hero--wrapper hero--slider slider--wrapper">
-      <article class="hero--slider__item">
-        <img src="img/hero-banner.jpg" alt="home banner" class="visible-desktop">
-        <img src="img/hero-banner-mobile.jpg" alt="home banner" class="visible-mobile">
-      </article>
-      <article class="hero--slider__item">
-        <img src="img/hero-banner.jpg" alt="home banner" class="visible-desktop">
-        <img src="img/hero-banner-mobile.jpg" alt="home banner" class="visible-mobile">
-      </article>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <article class="slider__item">
+              <img src="img/hero-banner.jpg" alt="home banner" class="visible-desktop">
+              <img src="img/hero-banner-mobile.jpg" alt="home banner" class="visible-mobile">
+            </article>
+          </li>
+          <li class="glide__slide">
+            <article class="slider__item">
+              <img src="img/hero-banner.jpg" alt="home banner" class="visible-desktop">
+              <img src="img/hero-banner-mobile.jpg" alt="home banner" class="visible-mobile">
+            </article>
+          </li>
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+      </div>
     </div>
   </section><!--EOF Slider-->
 
   <section id="MapSection" class="map">
     <div class="map--wrapper">
-      <figure id="map">
-        Mapa
-      </figure>
+      <div class="map--source">
+        <figure id="mapa">
+          Mapa
+        </figure>
+      </div>
       <article class="map--info">
         <header>
-          <h2>Ubicación</h2>
-          <h3>Centro Comercial</h3>
+          <h3>Ubicación</h3>
+          <h4>Centro Comercial</h4>
         </header>
         <div class="map--info__caption">
           <p>
             Lorem ipsum dolor sit amet consectetur adipiscing elit dictumst taciti praesent, volutpat eleifend curae lobortis imperdiet eu curabitur hac aliquet habitasse mi, in magnis potenti iaculis conubia nam etiam eros fringilla. 
           </p>
-          <a href="#" class="button button__red">Ver Mapa Completo</a>
+          <a href="https://www.google.com/maps/place/Spring+Plaza/@4.6295548,-74.1241324,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f9bffaf9eb5fb:0x47eaaa68d651a53d!8m2!3d4.6295495!4d-74.1219437" class="button button__red" target="_blank">Ver Mapa Completo</a>
         </div>
       </article>
     </div>
@@ -112,23 +129,37 @@
 
   <section id="MiddleBanner" class="middle slider">
     <div class="middle--wrapper middle--slider slider--wrapper">
-      <article class="middle--slider__item">
-        <img src="img/middle-slider.jpg" alt="home banner" class="visible-desktop">
-        <img src="img/middle-slider-mobile.jpg" alt="home banner" class="visible-mobile">
-      </article>
-      <article class="middle--slider__item">
-        <img src="img/middle-slider.jpg" alt="home banner" class="visible-desktop">
-        <img src="img/middle-slider-mobile.jpg" alt="home banner" class="visible-mobile">
-      </article>
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <article class="slider__item">
+                <img src="img/middle-slider.jpg" alt="home banner" class="visible-desktop">
+                <img src="img/middle-slider-mobile.jpg" alt="home banner" class="visible-mobile">
+              </article>
+            </li>
+            <li class="glide__slide">
+              <article class="slider__item">
+                <img src="img/middle-slider.jpg" alt="home banner" class="visible-desktop">
+                <img src="img/middle-slider-mobile.jpg" alt="home banner" class="visible-mobile">
+              </article>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        </div>
+      </div>      
     </div>
   </section><!--EOF Slider-->
   
   <section id="VideoWrapper" class="video">
+    <header>
+      <h3>Vive la</h3>
+      <h4>Experiencia</h4>
+    </header>
     <div class="video--wrapper">
-      <header>
-        <h3>Vive la</h3>
-        <h4>Experiencia</h4>
-      </header>
       <div class="video--player">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
@@ -194,9 +225,6 @@
     </div>
   </section><!--EOF Lead Form-->
 
-  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-  <script src="js/main.js"></script>
-
   <footer class="footer">
     <div class="footer--top">
       <div class="footer--top__brands">
@@ -242,11 +270,14 @@
       </ul>
     </div>
   </footer>
-
+  
+  <script src="js/vendor/glide.min.js"></script>
+  <script src="js/vendor/leaflet.js"></script>
+  <script src="js/main.js"></script>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+    // window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    // ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
