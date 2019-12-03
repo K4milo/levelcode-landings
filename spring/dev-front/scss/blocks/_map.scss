@@ -1,4 +1,40 @@
 .map {
+	position: relative;
+	@include mq('md') {
+		min-height: rem(550px);
+	}
+	&::before {
+		content: "";
+		display: block;
+		width: rem(60px);
+		height: rem(60px);
+		@include iconBG('../img/romb-red.png');
+		position: absolute;
+		top: rem(30px);
+		right: rem(-30px);
+		z-index: 0;
+		@include mq('md') {
+			width: rem(201px);
+			height: rem(201px);
+			right: rem(-100px);
+		}
+	}
+	&::after {
+		content: "";
+		display: block;
+		width: rem(145px);
+		height: rem(123px);
+		@include iconBG('../img/icon-pointer-big.png');
+		position: absolute;
+		bottom: rem(-40px);
+		right: rem(30px);
+		z-index: 0;
+		@include mq('md') {
+			width: rem(245px);
+			height: rem(223px);
+			right: rem(100px);
+		}
+	}
 	&--wrapper {
 		@include wrapper;
 		display: flex;
@@ -18,13 +54,40 @@
 	&--source {
 		figure {
 			display: block;
-			min-height: rem(350px);
+			min-height: rem(450px);
 		}
 	}
 	&--info {
+		header {
+			position: relative;
+			padding-left: rem(60px);
+			@include mq('md') {
+				padding-left: rem(75px);
+			}
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: rem(30px);
+				height: rem(30px);
+				@include iconBG('../img/icon-pointer.png');
+				@include mq('md') {
+					width: rem(60px);
+					height: rem(60px);
+				}
+			}
+			h4 {
+				@include mq('md') {
+					@include font(46px);
+					margin-bottom: rem(20px);
+				}
+			}
+		}
 		a {
 			margin: rem(16px) 0;
-			@include button($red, $color:$white, $size:rem(16px));
+			@include button($red, $white, rem(16px));
 		}
 	}
 }

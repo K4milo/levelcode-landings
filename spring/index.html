@@ -21,7 +21,7 @@
 
   <!-- Add your site or application content here -->
 
-  <section class="modal">
+  <section class="modal enable">
     <div class="modal--wrapper">
       <div class="modal--content">
         <div class="modal--content__header">
@@ -29,7 +29,7 @@
           <div class="modal--close">X</div>
         </div>
         <div class="modal--content__body">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/H0VoRfSx1PM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <ul>
             <li>
               <figure>
@@ -70,11 +70,11 @@
       </div>
       <nav class="header-menu">
          <ul>          
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Ubicación</a></li>
-            <li><a href="#">Proyecto</a></li>
-            <li><a href="#">Multimedia</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#HeroBanner">Inicio</a></li>
+            <li><a href="#MapSection">Ubicación</a></li>
+            <li><a href="#MiddleBanner">Proyecto</a></li>
+            <li><a href="#VideoWrapper">Multimedia</a></li>
+            <li><a href="#Leads">Contacto</a></li>
          </ul> 
       </nav><!--EOF Menu-->
     </div>
@@ -99,10 +99,11 @@
         </ul>
       </div>
       <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="img/icon-prev.png" alt="prev"></button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="img/icon-next.png" alt="next"></button>
       </div>
     </div>
+    <a href="#Leads" class="bottom-link bottom-link__mail">Déjanos un mensaje</a>
   </section><!--EOF Slider-->
 
   <section id="MapSection" class="map">
@@ -115,7 +116,7 @@
       <article class="map--info">
         <header>
           <h3>Ubicación</h3>
-          <h4>Centro Comercial</h4>
+          <h4>centro comercial</h4>
         </header>
         <div class="map--info__caption">
           <p>
@@ -147,8 +148,8 @@
           </ul>
         </div>
         <div class="glide__arrows" data-glide-el="controls">
-          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+          <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="img/icon-prev.png" alt="prev"></button>
+          <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="img/icon-next.png" alt="next"></button>
         </div>
       </div>      
     </div>
@@ -161,7 +162,7 @@
     </header>
     <div class="video--wrapper">
       <div class="video--player">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/H0VoRfSx1PM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video--content">
         <ul>
@@ -198,11 +199,18 @@
           <h4>Para más información</h4>
         </header>
         <form id="subscription" class="form">
+          <div class="form--item form--item__select">
+            <select name="usr-interest" id="userInterest">
+              <option>Intereses</option>
+              <option value="interest 1">Intereses 1</option>
+              <option value="interest 2">Intereses 2</option>
+            </select> 
+          </div>
           <div class="form--item form--item__text">
-            <input type="text" name="usr-name" placeholder="Nombre" required>
+            <input type="text" id="userName" name="usr-name" placeholder="Nombre" required>
           </div>
           <div class="form--item form--item__email">
-            <input type="text" name="usr-mail" placeholder="Correo electrónico" required>
+            <input type="text" id="userEmail" name="usr-mail" placeholder="Correo electrónico" required>
           </div>
           <div class="form--item form--item__actions">
             <button type="submit" class="button button__red">Suscribirme</button>
@@ -225,12 +233,15 @@
     </div>
   </section><!--EOF Lead Form-->
 
-  <footer class="footer">
+  <footer class="footer"> 
     <div class="footer--top">
       <div class="footer--top__brands">
-        <a href="#" class="footer-brand">Spring Plaza</a>
+        <a href="#" class="footer-brand">
+          <img src="img/logo-white-big.png" alt="Spring Plaza"/>
+        </a>
         <ul>
-          <li></li>
+          <li><img src="img/logo-mbo.svg" alt="Spring Plaza"/></li>
+          <li><img src="img/logo-colliers.png" alt="Spring Plaza"/></li>
         </ul>
       </div>
       <div class="footer--top__cols">
@@ -245,7 +256,7 @@
           </ul>
         </div>
         <div class="footer--top__cols-2">
-          <h4></h4>
+          <h4>Contáctenos</h4>
           <ul>
             <li><a href="#">Teléfono: 555 3546789</a></li>
             <li><a href="#">Nosotros</a></li>
@@ -255,10 +266,10 @@
         <div class="footer--top__cols-3">
           <h4>Nuestras redes sociales</h4>
           <ul>
-            <li><a href="#" class="facebook">facebook</a></li>
-            <li><a href="#" class="twitter">twitter</a></li>
-            <li><a href="#" class="instagram">instagram</a></li>
-            <li><a href="#" class="youtube">youtube</a></li>
+            <li><a href="#" class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#" class="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
           </ul>
         </div>
       </div>
@@ -266,7 +277,7 @@
     <div class="footer--bottom">
       <ul>
         <li>© 2019  Spring Plaza</li>
-        <li><a href="#">Legal</a> / <a href="#">TyC</a> / <a href="#">Habeas Data/Politica de tratamiento de datos</a></li>
+        <li><a href="#">Legal</a> / <a href="#">TyC</a> / <a href="#">Habeas Data / Politica de tratamiento de datos</a></li>
       </ul>
     </div>
   </footer>

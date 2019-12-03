@@ -13,7 +13,7 @@ var initSlider = function() {
 		slider.mount();
 	});
 }
-
+// Create map
 var buildMap = function () {
 
 	var map = L.map('mapa').setView([4.6295548,-74.1241324],16);
@@ -33,12 +33,24 @@ var buildMap = function () {
 	return map;
 }
 
+// Modal page
+var modalEvents = function() {
+	var modalWrapper = document.querySelector('.modal');
+	// Bubbling click
+	modalWrapper.addEventListener('click', function (e) {
+		if (e.target.classList.contains('modal--close')) {
+			modalWrapper.classList.remove('enable');
+		}
+	})
+}
+
 function init() {
+	// Modals
+	modalEvents();
 	// Trigger slider
 	initSlider();
 	// Trigger map
 	buildMap();
-
 }
 
 // -- Event Listeners --//

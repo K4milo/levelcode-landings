@@ -1,0 +1,89 @@
+.lead {
+	background-color: $bone;
+	padding: rem(30px);
+	position: relative;
+	@include mq('md') {
+		padding: rem(75px) 0;
+	}
+	&::before {
+		content: "";
+		display: block;
+		width: rem(106px);
+		height: rem(148px);
+		@include iconBG('../img/big-ornamental.png');
+		position: absolute;
+		top: rem(-50px);
+		left: rem(-55px);
+		z-index: 1;
+		@include mq('md') {
+			width: rem(206px);
+			height: rem(248px);
+			left: rem(-100px);
+			top: rem(-100px);
+		}
+	}
+	&::after {
+		content: "";
+		display: block;
+		width: rem(185px);
+		height: rem(138px);
+		@include iconBG('../img/icon-mail-big.png');
+		position: absolute;
+		bottom: rem(10px);
+		right: rem(30px);
+		z-index: 0;
+		@include mq('md') {
+			width: rem(218px);
+			height: rem(138px);
+			right: rem(100px);
+		}
+	}
+	&--wrapper {
+		@include wrapper;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		header {
+			h3 {
+				color: $gray-txt;
+			}
+			h3,h4 {
+				font-family: $md;
+				font-weight: normal;
+				text-transform: uppercase;
+				@include font(24px);
+			}
+		}
+		&__form,
+		&__info {
+			@include mq('md') {
+				width: 40%;
+			}
+		}
+		&__info {			
+			h5 {
+				color: $gray-txt;
+				text-transform: uppercase;
+				font-weight: normal;
+				&::before {
+					content: "";
+					display: inline-block;
+					vertical-align: middle;
+					width: rem(16px);
+					height: rem(20px);
+					margin-right: rem(10px);
+					@include iconBG('../img/icon-phone.svg');
+				}
+			}
+			ul {
+				padding: rem(16px) 0;
+				li {
+					display: block;
+					a {
+						color: $gray-txt;
+					}
+				}
+			}
+		}
+	}
+}

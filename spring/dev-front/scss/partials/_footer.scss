@@ -1,0 +1,93 @@
+.footer {
+	background-color: $red;
+	color: $white;
+	&-brand {
+		width: 20%;
+	}
+	&--top {
+		padding: rem(30px);
+		@include mq('md') {
+			padding: inherit;
+		}
+		// Brand footer
+		&__brands {
+			padding: rem(20px) 0;
+			@include wrapper;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			ul {
+				width: 40%;
+				text-align: center;
+				@include mq('md') {
+					text-align: right;
+				}
+				li {
+					width: 30%;
+					display: inline-block;
+				}
+			}
+		}
+		// Columns
+		&__cols {
+			@include wrapper;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			div {
+				width: 100%;
+				@include mq('md') {
+					width: 30%;
+				}
+				h4 {
+					display: inline-block;
+					font-family: $md;
+					color: $white;
+					margin-bottom: rem(10px);
+					border-bottom: rem(1px) solid $white;
+					@include font(22px);
+				}
+				ul {
+					padding: 0 0;
+					li {
+						display: block;
+						a {
+							color: $white;
+						}
+					}
+				}
+			}
+			&-3 {
+				ul {
+					text-align: center;
+					display: flex;
+					li {						
+						width: rem(40px);
+						@include font(30px);
+					}
+				}
+			}
+		}
+	}
+	// Bottom
+	&--bottom {
+		padding: rem(30px);
+		@include mq('md') {
+			padding: inherit;
+		}
+		background-color: $red-dk;
+		ul {
+			padding: rem(12px) 0;
+			@include wrapper;
+			display: flex;
+			justify-content: space-between;
+			li {
+				display: block;
+				a {
+					color: $white;
+				}
+			}
+		}
+	}
+}

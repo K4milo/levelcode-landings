@@ -1,6 +1,6 @@
 body {
 	font-family: $md;
-
+	overflow-x: hidden;
 	// Font styles
 	h1,h2,h3 {
 		font-family: $bk;
@@ -16,7 +16,9 @@ body {
 	}
 	
 	// button link behaviors
-	button,a{
+	button,
+	a{
+		border: none;
 		transition: all 0.32s;
 	}
 
@@ -24,6 +26,27 @@ body {
 		text-decoration: none;
 		&:hover {
 			text-decoration: underline;
+		}
+		&.bottom-link {
+			position: absolute;
+			background-color: $red;
+			right: rem(40px);
+			bottom: rem(17px);
+			padding: rem(10px) rem(12px);
+			border-radius: rem(5px);
+			display: inline-block;
+			color: $white;
+			&__mail{
+				&::before {
+					content:"";
+					display: inline-block;
+					vertical-align: middle;
+					width: rem(16px);
+					height: rem(12px);
+					margin: 0 rem(6px);
+					@include iconBG('../img/icon-mail-white.svg');
+				}
+			}
 		}
 	}
 
@@ -38,6 +61,7 @@ body {
 		}
 		h4 {
 			margin-top: rem(6px);
+			font-weight: normal;
 			@include font(35px);
 		}
 	}
