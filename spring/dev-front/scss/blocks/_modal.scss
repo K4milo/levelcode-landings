@@ -1,5 +1,5 @@
 .modal {
-	@include coverAbsolute(100);
+	@include coverAbsolute(10000);
 	background-color: rgba($black,0.74);
 	position: fixed;
 	display: none;
@@ -35,6 +35,9 @@
 
 		&__header {
 			text-align: center;
+			img {
+				max-width: rem(150px);
+			}
 		}
 
 		&__body {
@@ -59,8 +62,16 @@
 				}
 				li {
 					display: block;
-					width: 100%;
+					width: 88%;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					align-items: center;
+					padding: rem(12px) 0;
+					margin: 0 auto;
+					color: $white;
 					@include mq('md') {
+						display: block;
 						width: 40%;
 						margin: rem(16px) 0;
 						padding: 2% 4%;
@@ -75,20 +86,28 @@
 					}
 					figure,
 					span {
-						display: inline-block;
-						vertical-align: middle;
-						margin: 0 0;
+						@include mq('md') {
+							display: inline-block;
+							vertical-align: middle;
+							margin: 0 0;
+						}
 					}
 					span {
-						width: 65%;
-						color: $white;
-						text-align: left;
+						display: none;
+						@include mq('md') {
+							display: inline-block;
+							width: 65%;
+						}
 					}
 					figure {
-						width: 30%;
+						@include mq('md') {
+							width: 30%;
+						}
 					}
 					a {
-						margin: rem(16px) 0;
+						@include mq('md') {
+							margin: rem(16px) 0;
+						}
 						@include button($white, $color:$red, $size:rem(16px));
 					}
 				}

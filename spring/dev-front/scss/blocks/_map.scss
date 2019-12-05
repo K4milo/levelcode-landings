@@ -1,6 +1,8 @@
 .map {
 	position: relative;
-	@include mq('md') {
+	padding: rem(30px);
+	overflow: hidden;
+	@include mq('md') {		
 		min-height: rem(550px);
 	}
 	&::before {
@@ -47,17 +49,21 @@
 		width: 100%;
 		margin: rem(16px) auto;
 		@include mq('md') {
-			width: 50%;
+			margin: 0 0;
+			width: 44%;
 		}
 	}
 
 	&--source {
 		figure {
 			display: block;
+			width: 100%;
 			min-height: rem(450px);
+			margin: 0 0;
 		}
 	}
 	&--info {
+		padding: 0 rem(30px);
 		header {
 			position: relative;
 			padding-left: rem(60px);
