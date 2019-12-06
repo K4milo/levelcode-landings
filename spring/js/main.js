@@ -18,11 +18,11 @@ var initSlider = function() {
 var wowInit = function() {
 	var wow = new WOW(
 		{
-			boxClass:     'wow',      // animated element css class (default is wow)
-			animateClass: 'animated', // animation css class (default is animated)
-			offset:       0,          // distance to the element when triggering the animation (default is 0)
-			mobile:       true,       // trigger animations on mobile devices (default is true)
-			live:         true,       // act on asynchronously loaded content (default is true)
+			boxClass:     'wow',
+			animateClass: 'animated',
+			offset:       0,
+			mobile:       true,
+			live:         true,
 			callback:     function(box) {
 			// the callback is fired every time an animation is started
 			// the argument that is passed in is the DOM node being animated
@@ -65,6 +65,25 @@ var modalEvents = function() {
 	})
 }
 
+// Post Ajax requests
+var postAjax = function (url, data, success) {
+    var params = typeof data == 'string' ? data : Object.keys(data).map(
+            function(k){ return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]) }
+        ).join('&');
+
+    var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open('POST', url);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState>3 && xhr.status==200) { 
+        	success(xhr.responseText);
+        }
+    };
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send(params);
+    return xhr;
+}
+
 function init() {
 	// Wow
 	wowInit();
@@ -76,5 +95,28 @@ function init() {
 	buildMap();
 }
 
+// Post Ajax
+var formWrapper = document.getElementById('subscription');
+
 // -- Event Listeners --//
 document.addEventListener("DOMContentLoaded", init());
+
+var interest = document.getElementById('userInterest');
+var nameUser = document.getElementById('userName');
+var email = document.getElementById('userEmail');
+var row = document.getElementById('addRow'); 
+// Trigger Ajax
+formWrapper.addEventListener('submit', function(e){
+	e.preventDefault();
+
+	var OBJRequest = {
+		nombre:  nameUser.value,
+		email: email.value,
+		//intereses: interest.options[interest.selectedIndex].value,
+		s: row.value
+	}
+
+	var url = 'http://springplaza.co/admin/includes/ajax.php';
+
+	postAjax(url, OBJRequest, function(data){ console.log(data); });
+})

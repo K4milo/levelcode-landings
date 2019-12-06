@@ -1,0 +1,132 @@
+/* ==========================================================================
+  Estilos Administrador
+   ========================================================================== */
+* { padding: 0; margin: 0; }
+html, body, #fullheight {
+    min-height: 100% !important;
+    height: 100%;
+}
+#fullheight {
+    width: 250px;
+    background: blue;
+}
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+footer{
+  width: 100% !important;
+}
+
+/* Centrador de contenido */
+.vertical-align1 {
+  height:auto;
+}
+.vertical-align2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  height: 90%;
+}
+.vertical-align2 .btn-default{
+  height:120px;
+  
+}
+.spacer-class{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.spacer-class textarea{
+  width:100%;
+  height: 120px;
+  resize: none;
+}
+.foto_prev{
+  width:100%;
+  height:auto;
+}
+
+#loader{
+  position: absolute;
+    width: 300px;
+    height: 200px;
+    border: solid 1px red;
+    background-color: black;
+    color: white;
+    z-index: 10000;
+    top: 50%;
+    left: calc(50% - 150px);
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+}
+#bar_blank {
+  border: solid 1px #fff;
+  height: 20px;
+  width: 260px;
+}
+#bar_color {
+  background-color: #f00;
+  height: 20px;
+  width: 0px;
+}
+#status{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
