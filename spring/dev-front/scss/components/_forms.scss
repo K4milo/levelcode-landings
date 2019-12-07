@@ -4,7 +4,8 @@
 		margin-bottom: rem(18px);
 		width: 100%;
 		&__text,
-		&__email {
+		&__email,
+		&__phone {
 			input {
 				display: block;
 				width: 90%;
@@ -30,6 +31,14 @@
 				width: rem(16px);
 				height: rem(17px);
 				@include iconBG('../img/icon-man.svg');
+			}
+		}
+
+		&__phone {
+			&::before {
+				width: rem(16px);
+				height: rem(20px);
+				@include iconBG('../img/icon-phone.svg');
 			}
 		}
 
@@ -66,6 +75,10 @@
 				@include iconBG('../img/arrow-down.svg');
 				z-index: 2;
 			}
+		}
+		
+		&__checkbox {
+			margin: rem(20px) 0;
 		}
 
 		&__actions {

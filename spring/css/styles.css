@@ -5668,22 +5668,22 @@ body {
   position: relative;
   margin-bottom: 1.125rem;
   width: 100%; }
-  .form--item__text input, .form--item__email input {
+  .form--item__text input, .form--item__email input, .form--item__phone input {
     display: block;
     width: 90%;
     border-radius: 1rem;
     border: none;
     padding: 0.75rem 0 0.75rem 2.5rem;
     color: #cccccc; }
-    .form--item__text input::-webkit-input-placeholder, .form--item__email input::-webkit-input-placeholder {
+    .form--item__text input::-webkit-input-placeholder, .form--item__email input::-webkit-input-placeholder, .form--item__phone input::-webkit-input-placeholder {
       color: #cccccc; }
-    .form--item__text input:-moz-placeholder, .form--item__email input:-moz-placeholder {
+    .form--item__text input:-moz-placeholder, .form--item__email input:-moz-placeholder, .form--item__phone input:-moz-placeholder {
       color: #cccccc; }
-    .form--item__text input::-moz-placeholder, .form--item__email input::-moz-placeholder {
+    .form--item__text input::-moz-placeholder, .form--item__email input::-moz-placeholder, .form--item__phone input::-moz-placeholder {
       color: #cccccc; }
-    .form--item__text input:-ms-input-placeholder, .form--item__email input:-ms-input-placeholder {
+    .form--item__text input:-ms-input-placeholder, .form--item__email input:-ms-input-placeholder, .form--item__phone input:-ms-input-placeholder {
       color: #cccccc; }
-  .form--item__text::before, .form--item__email::before {
+  .form--item__text::before, .form--item__email::before, .form--item__phone::before {
     content: "";
     display: block;
     position: absolute;
@@ -5697,6 +5697,15 @@ body {
     width: 1rem;
     height: 1.0625rem;
     background-image: url("../img/icon-man.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-indent: -999999px;
+    overflow: hidden; }
+  .form--item__phone::before {
+    width: 1rem;
+    height: 1.25rem;
+    background-image: url("../img/icon-phone.svg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center center;
@@ -5741,6 +5750,8 @@ body {
     text-indent: -999999px;
     overflow: hidden;
     z-index: 2; }
+  .form--item__checkbox {
+    margin: 1.25rem 0; }
   .form--item__actions button {
     display: inline-block;
     min-width: 6.25rem;

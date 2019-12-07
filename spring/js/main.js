@@ -103,20 +103,30 @@ document.addEventListener("DOMContentLoaded", init());
 
 var interest = document.getElementById('userInterest');
 var nameUser = document.getElementById('userName');
+var phoneUser = document.getElementById('userPhone');
 var email = document.getElementById('userEmail');
 var row = document.getElementById('addRow'); 
+var table = document.getElementById('queryTable');
+var habeas = document.getElementById('aceptar');
+
+
 // Trigger Ajax
 formWrapper.addEventListener('submit', function(e){
 	e.preventDefault();
 
 	var OBJRequest = {
+		tabla: table.value,
+		s: row.value,
 		nombre:  nameUser.value,
 		email: email.value,
-		//intereses: interest.options[interest.selectedIndex].value,
-		s: row.value
+		telefono: phoneUser.value,
+		interes: interest.options[interest.selectedIndex].value,
+		acepto: habeas.value	
 	}
 
 	var url = 'http://springplaza.co/admin/includes/ajax.php';
 
-	postAjax(url, OBJRequest, function(data){ console.log(data); });
+	postAjax(url, OBJRequest, function(data){ 
+		alert('Su registro se ha efecturado exitosamente!');
+	});
 })

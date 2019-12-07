@@ -209,9 +209,17 @@
           <div class="form--item form--item__text">
             <input type="text" id="userName" name="nombre" placeholder="Nombre" required>
           </div>
+          <div class="form--item form--item__phone">
+            <input type="number" id="userPhone" name="telefono" placeholder="Teléfono" required>
+          </div>
           <div class="form--item form--item__email">
             <input type="text" id="userEmail" name="email" placeholder="Correo electrónico" required>
             <input type="hidden" value="8" name="s" id="addRow"/>
+            <input type="hidden" value="registros" name="tabla" id="queryTable"/>
+          </div>
+          <div class="form--item form--item__checkbox">
+            <label><input type="checkbox" class="validate[required]" name="acepto" id="aceptar">  He leído y acepto las políticas de privacidad, 
+tratamiento de información y datos personales para uso comercial</label>
           </div>
           <div class="form--item form--item__actions">
             <button type="submit" class="button button__red">Suscribirme</button>
