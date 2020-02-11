@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-// Vendors
-@import "../node_modules/font-awesome/scss/font-awesome";
-@import "vendors/glide";
-@import "vendors/animate";
-
 // Partials
 @import "partials/fonts";
 @import "partials/variables";
@@ -23,3 +18,8 @@
 
 // Components
 @import "components/forms";
+
+// Vendors
+@import "../node_modules/font-awesome/scss/font-awesome";
+@import "vendors/glide";
+@import "vendors/animate";

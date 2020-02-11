@@ -14,7 +14,7 @@
     "css-mqpacker": "^4.0.0",
     "csswring": "^4.0.0",
     "font-awesome": "^4.4.0",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.0",
     "gulp-livereload": "^3.8.1",
     "gulp-plumber": "^1.0.1",

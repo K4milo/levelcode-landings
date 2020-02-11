@@ -3,7 +3,7 @@
 	padding: rem(30px);
 	position: relative;
 	@include mq('md') {
-		padding: rem(75px) 0;
+		padding: rem(75px) rem(46px);
 	}
 	&::before {
 		content: "";
@@ -13,7 +13,7 @@
 		@include iconBG('../img/big-ornamental.png');
 		position: absolute;
 		top: rem(-50px);
-		left: rem(-55px);
+		left: rem(-56px);
 		z-index: 1;
 		@include mq('md') {
 			width: rem(206px);
@@ -62,26 +62,26 @@
 		}
 		&__info {			
 			h5 {
-				color: $gray-txt;
+				color: $black;
 				text-transform: uppercase;
-				font-weight: normal;
-				&::before {
-					content: "";
-					display: inline-block;
-					vertical-align: middle;
-					width: rem(16px);
-					height: rem(20px);
-					margin-right: rem(10px);
-					@include iconBG('../img/icon-phone.svg');
-				}
+				margin-bottom: 0;
 			}
 			ul {
-				padding: rem(16px) 0;
+				margin-top: 0;
+				padding: rem(6px) 0 rem(16px);
 				li {
 					display: block;
-					a {
-						color: $gray-txt;
+					i {
+						color: $red-dk;
 					}
+					a {
+						color: $gray-txt;						
+					}
+				}
+			}
+			p {
+				a {
+					color: $red-dk;
 				}
 			}
 		}

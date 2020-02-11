@@ -15,6 +15,7 @@
 		top: rem(30px);
 		right: rem(-30px);
 		z-index: 0;
+		padding: 0 rem(20px);
 		@include mq('md') {
 			width: rem(201px);
 			height: rem(201px);
@@ -50,11 +51,13 @@
 		margin: rem(16px) auto;
 		@include mq('md') {
 			margin: 0 0;
-			width: 44%;
 		}
 	}
 
 	&--source {
+		@include mq('md'){
+			width: 60%;
+		}
 		figure {
 			display: block;
 			width: 100%;
@@ -64,6 +67,9 @@
 	}
 	&--info {
 		padding: 0 rem(30px);
+		@include mq('md'){
+			width: 30%;
+		}
 		header {
 			position: relative;
 			padding-left: rem(60px);
@@ -91,9 +97,18 @@
 				}
 			}
 		}
-		a {
-			margin: rem(16px) 0;
-			@include button($red, $white, rem(16px));
+		a {	
+			&.waze {
+				display: inline-block;
+				max-width: rem(120px);
+				img {
+					max-width: 100%;
+				}
+			}		
+			&.button {
+				margin: rem(16px) 0;
+				@include button($red, $white, rem(16px));
+			}
 		}
 	}
 }
