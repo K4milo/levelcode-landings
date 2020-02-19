@@ -1,0 +1,17 @@
+.hero {
+    position: relative;
+    &--video {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: rem(450px);
+        @include mq('md') {
+            height: rem(720px);
+        }
+        video {
+            @include center('both');
+            width: 150%;
+            height: auto;
+        }
+    }
+}

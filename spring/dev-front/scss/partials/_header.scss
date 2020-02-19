@@ -1,8 +1,14 @@
 .header {
 	padding: rem(20px);
 	transition: all 0.32s;
+	position: fixed;
+	z-index: 666;
+	width: 100%;
+	top: 0;
+	left: 0;
+	@include background-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0), 'vertical');
 	@include mq('md') {
-		padding: 0 rem(20px);
+		padding: rem(20px);
 	}
 	&--wrapper {
 		@include wrapper;
@@ -48,7 +54,7 @@
 					flex: 1 1 rem(0px);
 				}
 				a {
-					color: $gray-txt;
+					color: $white;
 					&:hover {
 						color: $red;
 					}
