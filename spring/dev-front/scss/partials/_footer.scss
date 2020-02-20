@@ -1,93 +1,132 @@
+// Brands footer
+.brands {
+    padding: rem(20px);
+    ul {
+        padding: rem(16px) 0;
+        text-align: center;
+        max-width: 90%;
+        display: block;
+        margin: rem(16px) auto;
+        @include mq('md') {
+            display: flex;
+            align-items: center;
+            max-width: rem(800px);
+        }
+        li {
+            display: block;
+            text-align: center;
+            margin: rem(16px) auto;
+            @include mq('md') {
+                flex: 1 1 0;
+                margin: rem(10px);
+                display: table;
+                text-align: center;
+            }
+            a {
+                display: block;
+                @include mq('md') {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+            img {
+                display: inline-block;
+                max-width: 100%;
+            }
+        }
+    }
+}
+
 .footer {
-	background-color: $red;
-	color: $white;
-	&-brand {
-		width: 20%;
-	}
-	&--top {
-		padding: rem(30px);
-		@include mq('md') {
-			padding: inherit;
-		}
-		// Brand footer
-		&__brands {
-			padding: rem(20px) 0;
-			@include wrapper;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			align-items: center;
-			ul {
-				width: 40%;
-				text-align: center;
-				@include mq('md') {
-					text-align: right;
-				}
-				li {
-					width: 30%;
-					display: inline-block;
-				}
-			}
-		}
-		// Columns
-		&__cols {
-			@include wrapper;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			div {
-				width: 100%;
-				@include mq('md') {
-					width: 30%;
-				}
-				h4 {
-					display: inline-block;
-					font-family: $md;
-					color: $white;
-					margin-bottom: rem(10px);
-					border-bottom: rem(1px) solid $white;
-					@include font(22px);
-				}
-				ul {
-					padding: 0 0;
-					li {
-						display: block;
-						a {
-							color: $white;
-						}
-					}
-				}
-			}
-			&-3 {
-				ul {
-					text-align: center;
-					display: flex;
-					li {						
-						width: rem(40px);
-						@include font(30px);
-					}
-				}
-			}
-		}
-	}
-	// Bottom
-	&--bottom {
-		padding: rem(30px);
-		@include mq('md') {
-			padding: inherit;
-		}
-		background-color: $red-dk;
-		ul {
-			padding: rem(12px) 0;
-			@include wrapper;
-			display: flex;
-			justify-content: space-between;
-			li {
-				display: block;
-				a {
-					color: $white;
-				}
-			}
-		}
-	}
+    @include background-gradient($blue-dk, $blue, 'vertical');
+    color: $white;
+    &-brand {
+        width: 20%;
+    }
+    &--top {
+        padding: rem(30px);
+        @include mq('md') {
+            padding: inherit;
+        }
+        // Brand footer
+        &__brands {
+            padding: rem(20px) 0;
+            @include wrapper;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            ul {
+                width: 40%;
+                text-align: center;
+                @include mq('md') {
+                    text-align: right;
+                }
+                li {
+                    width: 30%;
+                    display: inline-block;
+                }
+            }
+        }
+        // Columns
+        &__cols {
+            @include wrapper;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            div {
+                width: 100%;
+                @include mq('md') {
+                    width: 30%;
+                }
+                h4 {
+                    display: inline-block;
+                    font-family: $md;
+                    color: $white;
+                    margin-bottom: rem(10px);
+                    border-bottom: rem(1px) solid $white;
+                    @include font(22px);
+                }
+                ul {
+                    padding: 0 0;
+                    li {
+                        display: block;
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+            &-3 {
+                ul {
+                    text-align: center;
+                    display: flex;
+                    li {
+                        width: rem(40px);
+                        @include font(30px);
+                    }
+                }
+            }
+        }
+    }
+    // Bottom
+    &--bottom {
+        padding: rem(30px);
+        background-color: $blue-dk;
+        @include mq('md') {
+            padding: inherit;
+        }
+        ul {
+            padding: rem(12px) 0;
+            @include wrapper;
+            display: flex;
+            justify-content: space-between;
+            li {
+                display: block;
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
 }
