@@ -8,10 +8,11 @@
         @include mq('md') {
             height: rem(720px);
         }
+        iframe,
         video {
             @include center('both');
             width: 150%;
-            height: auto;
+            height: 150%;
         }
     }
 }

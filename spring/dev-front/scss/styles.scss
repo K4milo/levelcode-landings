@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 // Partials
 @import "partials/fonts";
 @import "partials/variables";
@@ -8,18 +7,16 @@
 @import "partials/menu";
 @import "partials/header";
 @import "partials/footer";
-
 // Blocks
 @import "blocks/modal";
 @import "blocks/sliders";
 @import "blocks/video";
 @import "blocks/leads";
 @import "blocks/map";
-
+@import "blocks/rombs";
 // Components
 @import "components/forms";
 @import "components/video-hero";
-
 // Vendors
 @import "../node_modules/font-awesome/scss/font-awesome";
 @import "vendors/glide";

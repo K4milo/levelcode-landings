@@ -1,0 +1,62 @@
+.rombs {
+    &-container {
+        @include wrapper;
+        display: block;
+        padding: rem(30px) rem(20px);
+        @include mq('md') {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &--item {
+        width: 100%;
+        margin: rem(16px) 0;
+        text-align: center;
+        min-height: rem(200px);
+        position: relative;
+        text-align: center;
+        @include mq('md') {
+            flex: 1 1 0;
+        }
+        &::before {
+            content: "";
+            width: rem(160px);
+            height: rem(160px);
+            border-radius: rem(40px);
+            @include center('both');
+            transform: translate(-50%, -50%) rotate(45deg);
+            z-index: -1;
+        }
+        &__yellow {
+            &::before {
+                background-color: $yellow;
+            }
+        }
+        &__green {
+            &::before {
+                background-color: $green;
+            }
+        }
+        &__red {
+            &::before {
+                background-color: $red;
+            }
+        }
+        h3,
+        h4 {
+            color: $white;
+            text-align: center;
+        }
+        h3 {
+            padding-top: 9%;
+            margin-bottom: 0;
+            font-family: $md;
+            @include font(30px);
+        }
+        h4 {
+            @include font(18px);
+            font-family: $bk;
+            margin-top: 0;
+        }
+    }
+}
