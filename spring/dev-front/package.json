@@ -22,7 +22,7 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.7",
-    "node-sass": "^4.9.1",
+    "node-sass": "^4.13.1",
     "susy": "^2.2.6"
   },
   "dependencies": {
